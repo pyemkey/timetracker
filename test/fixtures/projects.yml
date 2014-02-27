@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  company_id: 1
-  default_rate: MyString
+helper:
+  name: Helper
+  company: netguru
+  default_rate: 50
 
-two:
-  name: MyString
-  company_id: 1
-  default_rate: MyString
+tennisapp:
+  name:  TennisApp
+  company: AdTaily
+  default_rate: 124

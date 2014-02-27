@@ -1,13 +1,8 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  project_id: 1
-  user_id: 1
-  date_time_performed: 2014-02-27 15:16:14
-  hours: 9.99
-
-two:
-  project_id: 1
-  user_id: 1
-  date_time_performed: 2014-02-27 15:16:14
-  hours: 9.99
+<% 20.times do |n| %>
+work_<%= n %>:
+  date_time_performed: <%= Time.now - n.days %>
+  user: <%= n % 2 == 0 ? 'michalk' : 'jeff' %>
+  project: <%= n % 3 == 0 ? 'helper' : 'tennisapp' %>
+  hours: <%= n % 8 + 1 %>
+<% end %>
