@@ -1,0 +1,6 @@
+%h1 Works#index
+%p Here are all of the works:
+
+%ul
+  - @works.each do |work|
+    %li= link_to work.date_time_performed, work

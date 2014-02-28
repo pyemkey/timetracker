@@ -1,0 +1,6 @@
+%h1= @work.date_time_performed
+%p= "Project: #{@work.project.name}"
+%p= "User: #{@work.user}"
+%p= "Hours: #{@work.hours}"
+
+%p= link_to "All Works", works_path
