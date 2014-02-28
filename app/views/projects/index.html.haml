@@ -1,0 +1,6 @@
+%h1 Projects#index
+%p Here are all of the projects:
+
+%ul
+  - @projects.each do |project|
+    %li= link_to project.name, project

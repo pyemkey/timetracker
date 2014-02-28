@@ -1,0 +1,5 @@
+%h1= @project.name
+%p= "Company: #{@project.company.name}"
+%p= "Default rate: #{@project.default_rate}"
+%p= "Slug #{@project.slug}"
+%p= link_to "All Projects", projects_path
