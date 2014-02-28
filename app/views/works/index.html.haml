@@ -1,6 +1,19 @@
 %h1 Works#index
 %p Here are all of the works:
 
-%ul
-  - @works.each do |work|
-    %li= link_to work.date_time_performed, work
+%table 
+  %thead 
+    %tr 
+      %th View
+      %th User
+      %th Project
+      %th Date/Time
+      %th Hours
+  %tbody 
+    - @works.each do |work|
+      %tr  
+        %td= link_to "View", work
+        %td= work.user
+        %td= link_to work.project, work.project
+        %td= work.date_time_performed.strftime('%m/%d/%Y %H:%M')
+        %td= work.hours

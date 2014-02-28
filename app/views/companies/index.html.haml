@@ -1,6 +1,11 @@
 %h1 Companies: index
 %p Here are all of the companies:
 
-%ul
+%table 
+  %thead 
+    %tr 
+      %th Company
+  %tbody 
   - @companies.each do |company|
-    %li= link_to company.name, company
+    %tr
+      %td= link_to company, company
