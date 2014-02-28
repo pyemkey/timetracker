@@ -9,6 +9,7 @@
   %body
     #container
       %header 
+        = link_to content_tag('canvas',"Time Tracker",id: 'logocanvas'), root_path
         %nav 
           %ul 
             - nav_items.each do |nav_item|
