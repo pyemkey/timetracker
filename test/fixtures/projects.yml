@@ -4,8 +4,10 @@ helper:
   name: Helper
   company: netguru
   default_rate: 50
+  slug: helper
 
 tennisapp:
   name:  TennisApp
-  company: AdTaily
+  company: adtaily
   default_rate: 124
+  slug: tennis-app
