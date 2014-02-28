@@ -2,8 +2,24 @@
 %html
   %head
     %title Timetracker
+    %meta{content: "width=device-width, initial scale=1", name: "viewport"}
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
   %body
-    = yield
+    #container
+      %header 
+        %nav 
+          %ul 
+            - nav_items.each do |nav_item|
+              = display_nav_item(nav_item[:display_text], nav_item[:controller_name], nav_item[:url_path])
+      %section#main
+        %article 
+          = yield
+        %aside 
+          = yield :aside
+      %footer 
+        %p 
+          Time Tracker is a
+          %em Sample Company
+          App
