@@ -13,6 +13,11 @@ class Work < ActiveRecord::Base
     since_date = Time.now - number_of_days_ago.to_i.days
     where("date_time_performed > '#{since_date}'")
   end
+
+  def to_s
+    "#{user}: #{date_time_performed.strftime('%d/%m/%Y %H:%M')} - #{hours} hours"
+  end
+
   private
     def date_time_cannot_be_in_the_future
       if date_time_performed.present? && date_time_performed > Time.now
