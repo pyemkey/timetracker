@@ -3,4 +3,5 @@
 %p= "User: #{@work.user}"
 %p= "Hours: #{@work.hours}"
 
-%p= link_to "All Works", works_path
+- content_for :aside do
+  = render "sidebar"

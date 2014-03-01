@@ -9,8 +9,7 @@
       %th
         Company
   %tbody 
-    - @projects.each do |project|
-      %tr 
-        %td= link_to project, project
-        %td= link_to project.company, project.company
+    = render partial: "project", collection: @projects
 
+- content_for :aside do
+  = render "sidebar"

@@ -1,3 +1,13 @@
 %h1= @company.name
+%table
+  %thead 
+    %tr 
+      %th 
+        Project
+      %th
+        Company
+  %tbody 
+    = render partial: "projects/project", collection: @company.projects
 
-%p= link_to "All Companies", companies_path
+- content_for :aside do
+  = render "sidebar"

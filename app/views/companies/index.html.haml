@@ -6,6 +6,8 @@
     %tr 
       %th Company
   %tbody 
-  - @companies.each do |company|
-    %tr
-      %td= link_to company, company
+    = render partial: "company", collection: @companies
+    
+
+- content_for :aside do
+  = render "sidebar"

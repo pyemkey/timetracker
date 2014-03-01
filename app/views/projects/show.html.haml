@@ -1,5 +1,19 @@
 %h1= @project.name
-%p= "Company: #{@project.company.name}"
+
+%p= "Company: #{@project.company}"
 %p= "Default rate: #{@project.default_rate}"
 %p= "Slug #{@project.slug}"
-%p= link_to "All Projects", projects_path
+
+%table 
+  %thead 
+    %tr 
+      %th View
+      %th User
+      %th Project
+      %th Date/Time
+      %th Hours
+  %tbody 
+    = render partial: "works/work", collection: @project.works
+
+- content_for :aside do
+  = render "sidebar"
