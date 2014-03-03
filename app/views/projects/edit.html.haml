@@ -1,0 +1,8 @@
+%h1 Edit 
+
+= render "layouts/error_notification", object: @project
+
+= render "form"
+
+- content_for :aside do
+  = render "sidebar"

@@ -1,0 +1,6 @@
+= simple_form_for(@company, defaults: { input_html: { class: "vertical"} }) do |f|
+  = f.input :name
+  - if @company.new_record?
+    = f.submit "Create Company"
+  - else
+    = f.submit "Update Company"

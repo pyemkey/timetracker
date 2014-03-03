@@ -1,0 +1,6 @@
+= simple_form_for(@work, defaults: { input_html: { class: "vertical"}}) do |f|
+  = f.input :project_id, collection: Project.all, prompt: true
+  = f.input :user_id, collection: User.order('last_name, first_name'), prompt: true
+  = f.input :date_time_performed, as: :date, label: "Date/Time performed"
+  = f.input :hours, collection: 1..8, prompt: true
+  = f.submit "Create Work" 

@@ -1,0 +1,7 @@
+= simple_form_for(@project, defaults: { input_html: { class: "vertical"} }) do |f|
+  = f.input :name
+  = f.input :slug
+  = f.input :default_rate
+  = f.input :company_id, collection: Company.all, prompt: true
+  
+  = f.submit "Create Project"
