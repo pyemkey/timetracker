@@ -148,3 +148,26 @@ footer p {
     padding-bottom: 10px;
   }
 }
+
+.control-label {
+  display: block;
+}
+.vertical {
+  margin-bottom: 15px;
+}
+
+.bolder {
+  font-weight: bold;
+}
+
+.errors {
+  background-color: #FF9494;
+  border: 1px solid #222;
+  margin-bottom: 30px;
+  padding: 10px 0 10px 20px;
+  width: 60%;
+}
+
+.error {
+  background-color: #FF9494;
+}
