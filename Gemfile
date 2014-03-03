@@ -13,6 +13,7 @@ gem 'haml'
 gem 'devise'
 gem 'will_paginate'
 gem 'thin'
+gem 'simple_form'
 group :doc do
   gem 'sdoc', require: false
 end
