@@ -1,5 +1,7 @@
 %h1= @project.name
 
+= link_to "Edit project", edit_project_path(@project)
+
 %p= "Company: #{@project.company}"
 %p= "Default rate: #{@project.default_rate}"
 %p= "Slug #{@project.slug}"
