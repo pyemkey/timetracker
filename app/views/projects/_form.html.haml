@@ -4,4 +4,4 @@
   = f.input :default_rate
   = f.input :company_id, collection: Company.all, prompt: true
   
-  = f.submit "Create Project"
+  = f.submit @project.new_record? ? "Create Project" : "Update Project"

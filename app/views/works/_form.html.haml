@@ -3,4 +3,4 @@
   = f.input :user_id, collection: User.order('last_name, first_name'), prompt: true
   = f.input :date_time_performed, as: :date, label: "Date/Time performed"
   = f.input :hours, collection: 1..8, prompt: true
-  = f.submit "Create Work" 
+  = f.submit @work.new_record? "Create Work" : "Update Work"
