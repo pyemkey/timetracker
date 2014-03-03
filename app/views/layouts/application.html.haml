@@ -15,7 +15,10 @@
             - nav_items.each do |nav_item|
               = display_nav_item(nav_item[:display_text], nav_item[:controller_name], nav_item[:url_path])
       %section#main
-        %article 
+        %article
+          - flash.each do |key, msg|
+            %div{class: key == :notice ? 'success' : 'error'}
+              = msg 
           = yield
         %aside 
           = yield :aside
