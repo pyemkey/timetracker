@@ -5,9 +5,11 @@ helper:
   company: netguru
   default_rate: 50
   slug: helper
+  user: michalk
 
 tennisapp:
   name:  TennisApp
   company: adtaily
   default_rate: 124
   slug: tennis-app
+  user: michalk

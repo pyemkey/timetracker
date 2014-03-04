@@ -4,13 +4,17 @@ michalk:
   first_name: Michal
   last_name: Kloda
   company: Netguru
+  email: mkloda@netguru.com
+  encrypted_password: <%= User.new.send(:password_digest, 'pass') %>
 
 jeff:
   first_name: Jeff 
   last_name: Cline
   company: Netguru
+  email: jcline@netguru.com
 
 remy:
   first_name: Remy 
   last_name: Adic
   company: AdTaily
+  email: radic@adtaily.com
