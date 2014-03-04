@@ -17,7 +17,18 @@ class WorksController < ApplicationController
 
   def create
     @work = Work.new(secure_params)
+    uploaded_io = params[:doc]
+
+    if params[:doc]
+      File.open(Rails.root.join("public", "uploads", uploaded_io.original_filename), 'wb') do |file|
+        raise
+        file.write(uploaded_io.read)
+        @work.doc = uploaded_io.original_filename
+      end
+    end
+
     if @work.save
+      Usermailer.send_info_about_work(@work).deliver
       redirect_to root_path
     else
       render :new

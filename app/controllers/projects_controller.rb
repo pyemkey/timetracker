@@ -1,4 +1,5 @@
 class ProjectsController < ApplicationController
+  before_filter :authenticate_user!, only: [:new, :edit,:create, :update]
   def index
     @projects = Project.all
   end
@@ -31,6 +32,7 @@ class ProjectsController < ApplicationController
   def update
     @project = Project.find(params[:id])
     if @project.update_attributes(secure_params)
+      Usermailer.update_project(@project).deliver
       redirect_to @project, notice: "Update succesfull"
     else
       redirect_to edit_project_path(@project), alert: "Something goes wrong"

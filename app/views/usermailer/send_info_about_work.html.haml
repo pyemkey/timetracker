@@ -1,0 +1,7 @@
+%h1= "Hello, #{@work.user}"
+
+%p I would like to send few information about new work, which was created
+
+%p= "Project name: #{@work.project}"
+%p= "Date: #{@work.date_time_performed}"
+%p= "Work was done in #{pluralize(@work.hours, 'hour')}"
