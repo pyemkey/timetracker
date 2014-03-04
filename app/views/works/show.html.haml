@@ -7,7 +7,7 @@
 %p= "Hours: #{@work.hours}"
 - if @work.doc
   %p
-    Document #{link_to @work.doc, "uploads/#{@work.doc}"}
+    Document #{link_to @work.doc, "/uploads/#{@work.doc}", target: "_blank"}
 
 - content_for :aside do
   = render "sidebar"
