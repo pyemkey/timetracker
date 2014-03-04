@@ -14,6 +14,7 @@ gem 'devise'
 gem 'will_paginate'
 gem 'thin'
 gem 'simple_form'
+gem 'figaro'
 group :doc do
   gem 'sdoc', require: false
 end
