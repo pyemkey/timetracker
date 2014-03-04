@@ -17,11 +17,10 @@ class WorksController < ApplicationController
 
   def create
     @work = Work.new(secure_params)
-    uploaded_io = params[:doc]
+    uploaded_io = params[:work][:doc]
 
-    if params[:doc]
+    if uploaded_io
       File.open(Rails.root.join("public", "uploads", uploaded_io.original_filename), 'wb') do |file|
-        raise
         file.write(uploaded_io.read)
         @work.doc = uploaded_io.original_filename
       end
