@@ -2,6 +2,10 @@ class ProjectsController < ApplicationController
   before_filter :authenticate_user!, only: [:new, :edit,:create, :update]
   def index
     @projects = Project.all
+    respond_to do |format|
+      format.html
+      format.csv { send_data Project.export_csv(@projects), type: 'text/csv; charset=utf-8; header-present;', disposition: 'attachment; filename=contacts.csv'}
+    end
   end
 
   def show
