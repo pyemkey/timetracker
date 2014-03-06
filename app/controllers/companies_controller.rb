@@ -1,4 +1,6 @@
 class CompaniesController < ApplicationController
+  before_filter :authenticate_user!, only: [:create, :edit, :update, :new]
+  before_filter :is_admin?, only: [:create, :edit, :update, :new]
   def index
     @companies = Company.all    
   end
@@ -41,6 +43,12 @@ class CompaniesController < ApplicationController
   private
     def secure_params
       params.require(:company).permit(:name)
+    end
+
+    def is_admin?
+      unless current_user.admin?
+        redirect_to root_path, alert: "Only admin can do this!"
+      end
     end
 end
 
