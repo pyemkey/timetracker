@@ -2,9 +2,9 @@ class WorksController < ApplicationController
   before_filter :authentcate_user!, only: [:new, :create, :edit, :update]
   def index
     if params[:days]
-      @works = Work.all.recent_works(params[:days]).order_by_time
+      @works = Work.all.recent_works(params[:days]).order_by_time.paginate(page: params[:page])
     else
-      @works = Work.all.order_by_time
+      @works = Work.all.order_by_time.paginate(page: params[:page])
     end
   end
 

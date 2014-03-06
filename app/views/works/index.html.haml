@@ -11,6 +11,7 @@
       %th Hours
   %tbody 
     = render partial: "work", collection: @works
+= will_paginate @works
 
 - content_for :aside do
   = render "sidebar"
