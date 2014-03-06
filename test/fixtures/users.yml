@@ -6,15 +6,19 @@ michalk:
   company: Netguru
   email: mkloda@netguru.com
   encrypted_password: <%= User.new.send(:password_digest, 'pass') %>
+  admin: true
 
 jeff:
   first_name: Jeff 
   last_name: Cline
   company: Netguru
   email: jcline@netguru.com
+  admin: false
 
 remy:
   first_name: Remy 
   last_name: Adic
   company: AdTaily
   email: radic@adtaily.com
+  admin: false
+  
