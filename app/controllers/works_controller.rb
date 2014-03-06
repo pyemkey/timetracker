@@ -1,4 +1,5 @@
 class WorksController < ApplicationController
+  before_filter :authentcate_user!, only: [:new, :create, :edit, :update]
   def index
     if params[:days]
       @works = Work.all.recent_works(params[:days]).order_by_time
@@ -17,6 +18,7 @@ class WorksController < ApplicationController
 
   def create
     @work = Work.new(secure_params)
+    @work.user = current_user
     uploaded_io = params[:work][:doc]
 
     if uploaded_io
@@ -40,6 +42,7 @@ class WorksController < ApplicationController
 
   def update
     @work = Work.find(params[:id])
+    @work.user = current_user
     if @work.update_attributes(secure_params)
       redirect_to @work, notice: "Update succesfull"
     else
